@@ -5,26 +5,24 @@
         static void Main(string[] args)
         {
             int charge = 0;
-            Console.Write("Enter your car registration: ");
+            Console.WriteLine("Enter your car registration!");
             string carReg = Console.ReadLine();
-            while (carReg.Length > 8)
+            while(carReg.Length > 8) 
             {
-                string displayMessge = " is not valid";
-                Console.Write(displayMessge);
+                Console.WriteLine(carReg+" is not valid, please try again!");
                 carReg = Console.ReadLine();
             }
-            Console.Write("Enter your stay in hours: ");
+            Console.WriteLine("Enter the number of hours you have been parked!");
             int hours = Convert.ToInt32(Console.ReadLine());
-            if (hours < 2)
+            if (hours >= 2)
             {
-                charge = 0;
+                charge = hours + 2;
             }
             else
             {
-                charge = hours * 2;
+                charge = hours;
             }
-            Console.WriteLine(charge);
-
+            Console.WriteLine("The charge for parking is £" + charge+" for "+carReg+"!");
             // rewrite line 12 to concatenate the car registration with the string is not valid
             // store the result in display message
 
